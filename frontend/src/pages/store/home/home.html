@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo - Food Store</title>
+    <link rel="stylesheet" href="../../../style.css">
+</head>
+<body>
+    <header class="home-header" id="home-header">
+        <h1>Food Store</h1>
+        <div class="home-nav">
+        <nav>
+            <a href="home.html">Inicio</a>
+            <a href="../../client/orders/orders.html">Mis Pedidos</a>
+            <a href="../../admin/adminHome/adminHome.html" id="nav-admin" style="display: none;">Administración</a>
+            <a href="../cart/cart.html">Carrito</a>
+        </nav>
+        <h2 id="nombre-usuario"></h2>
+        <button id="btn-logout" class="btn-base btn-primary">Cerrar Sesión</button>
+        </div>
+    </header>
+
+    <div class="store-container" style="display: flex;">
+        <aside class="categorias-container">
+            <h3 class="title-categorias">Categorías</h3>
+            <ul id="categorias-lista"></ul>
+        </aside>
+
+        <main style="width: 80%; padding: 1rem;">
+            <div class="filtros">
+                <input type="text" class="search-input" id="search-input" placeholder="Buscar productos...">
+                <select id="sort-select" class="sort-select">
+                    <option value="default">Ordenar por...</option>
+                    <option value="precio-asc">Precio: Menor a Mayor</option>
+                    <option value="precio-desc">Precio: Mayor a Menor</option>
+                    <option value="nombre-asc">Nombre: A - Z</option>
+                </select>
+            </div>
+
+            <div id="productos-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1rem;"></div>
+        </main>
+    </div>
+
+    <script type="module" src="./home.ts"></script>
+</body>
+</html>

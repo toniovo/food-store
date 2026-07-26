@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Categorías - Food Store</title>
+    <link rel="stylesheet" href="../../../style.css">
+</head>
+<body class="admin-body">
+    <aside class="admin-sidebar">
+        <div class="sidebar-header">
+            <h2>🍕 Food Store</h2>
+            <p>Admin Panel</p>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="/src/pages/admin/adminHome/adminHome.html" class="nav-item">📊 Dashboard</a>
+            <a href="/src/pages/admin/categories/categories.html" class="nav-item active">📁 Categorías</a>
+            <a href="/src/pages/admin/products/products.html" class="nav-item">🍔 Productos</a>
+            <a href="/src/pages/admin/orders/orders.html" class="nav-item">📦 Pedidos</a>
+        </nav>
+        <div class="sidebar-footer">
+            <button id="btn-logout" class="btn-base btn-danger btn-block">Cerrar Sesión</button>
+        </div>
+    </aside>
+
+    <main class="admin-main">
+        <header class="admin-header">
+            <h1>Gestión de Categorías</h1>
+            <button id="btn-nueva-cat" class="btn-base btn-success">+ Nueva Categoría</button>
+        </header>
+
+        <div class="table-container" style="background: white; border-radius: 8px; padding: 1rem; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+            <table style="width: 100%; border-collapse: collapse; text-align: left;">
+                <thead>
+                    <tr style="border-bottom: 2px solid #eee;">
+                        <th style="padding: 1rem;">ID</th>
+                        <th style="padding: 1rem;">Imagen</th>
+                        <th style="padding: 1rem;">Nombre</th>
+                        <th style="padding: 1rem;">Descripción</th>
+                        <th style="padding: 1rem; text-align: right;">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="categorias-tbody">
+                </tbody>
+            </table>
+        </div>
+
+        <dialog id="modal-categoria" class="modal">
+            <div class="modal-header">
+                <h3 id="modal-titulo">Nueva Categoría</h3>
+                <button id="btn-cerrar-modal" class="btn-cerrar">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="categoria-form">
+                    <input type="hidden" id="cat-id">
+                    
+                    <div class="form-group">
+                        <label>Nombre:</label>
+                        <input type="text" id="cat-nombre" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Descripción:</label>
+                        <textarea id="cat-desc" rows="3" required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>URL de Imagen:</label>
+                        <input type="url" id="cat-img" required placeholder="https://ejemplo.com/imagen.jpg">
+                    </div>
+
+                    <button type="submit" class="btn-base btn-dark btn-block btn-large" style="margin-top: 1rem;">Guardar Categoría</button>
+                </form>
+            </div>
+        </dialog>
+    </main>
+
+    <script type="module" src="./categories.ts"></script>
+</body>
+</html>

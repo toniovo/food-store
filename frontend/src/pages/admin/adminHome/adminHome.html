@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard Admin - Food Store</title>
+    <link rel="stylesheet" href="../../../style.css">
+</head>
+<body class="admin-body">
+    <aside class="admin-sidebar">
+        <div class="sidebar-header">
+            <h2>🍕 Food Store</h2>
+            <p>Panel de Administración</p>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="adminHome.html" class="nav-item active">📊 Dashboard</a>
+            <a href="../categories/categories.html" class="nav-item">📁 Categorías</a>
+            <a href="../products/products.html" class="nav-item">🍔 Productos</a>
+            <a href="../orders/orders.html" class="nav-item">📦 Pedidos</a>
+        </nav>
+        <div class="sidebar-footer">
+            <button id="btn-logout" class="btn-base btn-danger btn-block">Cerrar Sesión</button>
+        </div>
+    </aside>
+
+    <main class="admin-main">
+        <header class="admin-header">
+            <h1>Dashboard</h1>
+            <span id="admin-user-name">Hola, Admin</span>
+        </header>
+
+        <section class="dashboard-cards">
+            <div class="stat-card bg-purple">
+                <h3>Categorías</h3>
+                <p id="stat-categorias">0</p>
+            </div>
+            <div class="stat-card bg-pink">
+                <h3>Productos</h3>
+                <p id="stat-productos">0</p>
+            </div>
+            <div class="stat-card bg-blue">
+                <h3>Pedidos</h3>
+                <p id="stat-pedidos">0</p>
+            </div>
+            <div class="stat-card bg-green">
+                <h3>Disponibles</h3>
+                <p id="stat-disponibles">0</p>
+            </div>
+        </section>
+
+        <section class="dashboard-summary">
+            <h2>Resumen del Sistema</h2>
+            <div class="summary-grid">
+                <div class="summary-box">
+                    <h4>Categorías</h4>
+                    <p id="resumen-cat-activas">Activas: 0</p>
+                    <p id="resumen-cat-inactivas">Inactivas (Baja): 0</p>
+                </div>
+                <div class="summary-box">
+                    <h4>Productos</h4>
+                    <p id="resumen-prod-activos">Activos: 0</p>
+                    <p id="resumen-prod-inactivos">Inactivos (Baja): 0</p>
+                </div>
+                <div class="summary-box">
+                    <h4>Pedidos por Estado</h4>
+                    <ul id="resumen-pedidos-lista" style="list-style: none; padding: 0;">
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="adminHome.ts"></script>
+</body>
+</html>

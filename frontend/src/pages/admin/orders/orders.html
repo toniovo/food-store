@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Pedidos - Admin</title>
+    <link rel="stylesheet" href="../../../style.css">
+</head>
+<body class="admin-body">
+    <aside class="admin-sidebar">
+        <div class="sidebar-header">
+            <h2>🍕 Food Store</h2>
+            <p>Admin Panel</p>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="/src/pages/admin/adminHome/adminHome.html" class="nav-item">📊 Dashboard</a>
+            <a href="/src/pages/admin/categories/categories.html" class="nav-item">📁 Categorías</a>
+            <a href="/src/pages/admin/products/products.html" class="nav-item">🍔 Productos</a>
+            <a href="/src/pages/admin/orders/orders.html" class="nav-item active">📦 Pedidos</a>
+        </nav>
+        <div class="sidebar-footer">
+            <button id="btn-logout" class="btn-base btn-danger btn-block">Cerrar Sesión</button>
+        </div>
+    </aside>
+
+    <main class="admin-main">
+        <header class="admin-header" style="display: flex; justify-content: space-between; align-items: center;">
+            <h1>Gestión de Pedidos</h1>
+            
+            <div>
+                <label style="font-weight: bold; margin-right: 10px;">Filtrar por Estado:</label>
+                <select id="filtro-estado" style="padding: 8px; border-radius: 4px; border: 1px solid #ccc; font-size: 1rem;">
+                    <option value="TODOS">Todos los pedidos</option>
+                    <option value="PENDIENTE">Pendientes</option>
+                    <option value="CONFIRMADO">Confirmados</option>
+                    <option value="TERMINADO">Terminados</option>
+                    <option value="CANCELADO">Cancelados</option>
+                </select>
+            </div>
+        </header>
+
+        <div id="pedidos-admin-container" class="pedidos-list">
+        </div>
+
+        <dialog id="modal-pedido-admin" class="modal">
+            <div class="modal-header">
+                <h3 id="modal-titulo">Detalle del Pedido</h3>
+                <button id="btn-cerrar-modal" class="btn-cerrar">&times;</button>
+            </div>
+            <div id="modal-contenido" class="modal-body">
+            </div>
+            
+            <div class="modal-footer" style="padding: 1.5rem; background: #f9fafb; border-top: 1px solid #e5e7eb; display: flex; gap: 1rem; align-items: center;">
+                <label style="font-weight: bold;">Cambiar Estado:</label>
+                <select id="select-nuevo-estado" style="flex: 1; padding: 8px; border-radius: 4px; border: 1px solid #ccc;">
+                    <option value="PENDIENTE">PENDIENTE</option>
+                    <option value="CONFIRMADO">CONFIRMADO</option>
+                    <option value="TERMINADO">TERMINADO</option>
+                    <option value="CANCELADO">CANCELADO</option>
+                </select>
+                <button id="btn-actualizar-estado" class="btn-base btn-success">Actualizar Estado</button>
+            </div>
+        </dialog>
+    </main>
+
+    <script type="module" src="./orders.ts"></script>
+</body>
+</html>

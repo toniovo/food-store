@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalle de Producto - Food Store</title>
+    <link rel="stylesheet" href="../../../style.css">
+</head>
+<body class="bg-gray-50">
+    <header class="home-header">
+        <h1>Food Store</h1>
+        <div class="home-nav">
+            <button class="btn-base btn-outline" onclick="window.location.href='/src/pages/store/home/home.html'">Volver al Catálogo</button>
+            <button class="btn-base btn-outline" onclick="window.location.href='/src/pages/store/cart/cart.html'">
+                🛒 Carrito (<span id="cart-count">0</span>)
+            </button>
+        </div>
+    </header>
+
+    <main class="detalle-container">
+        <div class="detalle-imagen-wrapper">
+            <img id="detalle-imagen" src="" alt="Producto">
+        </div>
+
+        <div class="detalle-info">
+            <h2 id="detalle-nombre">Cargando...</h2>
+            <p id="detalle-desc" class="text-gray"></p>
+            <h3 id="detalle-precio" class="precio-destacado"></h3>
+            
+            <div class="caja-controles">
+                <p>Stock disponible: <strong id="detalle-stock"></strong></p>
+                
+                <div class="control-cantidad">
+                    <label>Cantidad:</label>
+                    <button id="btn-restar" class="btn-circulo">-</button>
+                    <input type="number" id="input-cantidad" value="1" min="1" readonly>
+                    <button id="btn-sumar" class="btn-circulo">+</button>
+                </div>
+
+                <button id="btn-agregar-carrito" class="btn-base btn-dark btn-block btn-large">Agregar al Carrito</button>
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="productDetail.ts"></script>
+</body>
+</html>

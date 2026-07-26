@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi Carrito - Food Store</title>
+    <link rel="stylesheet" href="../../../style.css">
+</head>
+<body style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+    <header class="home-header">
+        <h1>Food Store</h1>
+        <div class="home-nav">
+            <button class="btn-base btn-outline" onclick="window.location.href='/src/pages/store/home/home.html'">Volver al Catálogo</button>
+            <button class="btn-base btn-outline" onclick="window.location.href='/src/pages/client/orders/orders.html'">Mis Pedidos</button>
+        </div>
+    </header>
+
+    <main class="carrito-container">
+        <!-- Lista de Productos -->
+        <section class="carrito-items-section">
+            <h2>Mi Carrito de Compras</h2>
+            <div id="cart-items" class="cart-items-list">
+                <!-- Se inyecta con TS -->
+            </div>
+            <button id="btn-vaciar" class="btn-base btn-danger mt-4">Vaciar Carrito</button>
+        </section>
+
+        <!-- Resumen y Checkout -->
+        <aside class="carrito-resumen-section">
+            <h3>Resumen del Pedido</h3>
+            <div class="resumen-fila">
+                <span>Subtotal:</span> 
+                <span>$<span id="resumen-subtotal">0.00</span></span>
+            </div>
+            <div class="resumen-fila">
+                <span>Envío:</span> 
+                <span>$<span id="resumen-envio">500.00</span></span>
+            </div>
+            <hr class="resumen-divisor">
+            <div class="resumen-fila total">
+                <span>Total:</span> 
+                <span>$<strong id="resumen-total">0.00</strong></span>
+            </div>
+
+            <form id="checkout-form" class="checkout-form">
+                <h4>Completar Pedido</h4>
+                <div class="form-group">
+                    <label>Teléfono:</label>
+                    <input type="text" id="telefono" required placeholder="Ej: +54 9 11 1234-5678">
+                </div>
+                <div class="form-group">
+                    <label>Método de Pago:</label>
+                    <select id="forma-pago" required>
+                        <option value="TARJETA">Tarjeta de Crédito/Débito</option>
+                        <option value="TRANSFERENCIA">Transferencia Bancaria</option>
+                        <option value="EFECTIVO">Efectivo al recibir</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-base btn-success btn-block btn-large">Proceder al Pago</button>
+            </form>
+        </aside>
+    </main>
+
+    <script type="module" src="./cart.ts"></script>
+</body>
+</html>

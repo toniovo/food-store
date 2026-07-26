@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mis Pedidos - Food Store</title>
+    <link rel="stylesheet" href="../../../style.css">
+</head>
+<body style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+    <header class="home-header">
+        <h1>Food Store</h1>
+        <div class="home-nav">
+            <button class="btn-base btn-outline" onclick="window.location.href='/src/pages/store/home/home.html'">Volver al Catálogo</button>
+            <button class="btn-base btn-outline" onclick="window.location.href='/src/pages/store/cart/cart.html'">🛒 Carrito</button>
+        </div>
+    </header>
+
+    <main class="pedidos-container">
+        <div class="pedidos-header">
+            <h2>Historial de Mis Pedidos</h2>
+        </div>
+        
+        <div id="orders-container" class="pedidos-list">
+        </div>
+    </main>
+
+    <dialog id="modal-detalle" class="modal">
+        <div class="modal-header">
+            <h3 id="modal-titulo">Detalle del Pedido</h3>
+            <button id="btn-cerrar-modal" class="btn-cerrar" title="Cerrar">&times;</button>
+        </div>
+        <div id="modal-contenido" class="modal-body">
+        </div>
+    </dialog>
+
+    <script type="module" src="./orders.ts"></script>
+</body>
+</html>
