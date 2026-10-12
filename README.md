@@ -8,6 +8,22 @@ El codigo fuente se encuentra dividido en dos directorios principales. Cada uno 
 * /frontend: Contiene la aplicacion web que desarrolle utilizando Vite y TypeScript.
 * /backend: Contiene el modelo de persistencia y la aplicacion de consola que construi utilizando Java, JPA, Hibernate y la base de datos H2.
 
+## Inicio rápido
+
+La tienda web y la aplicación de consola se ejecutan por separado.
+
+Para iniciar la tienda web:
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Para iniciar el menú de la aplicación de consola, desde `backend` ejecutá `./gradlew run` en macOS/Linux o `gradlew run` en Windows. Las instrucciones y credenciales de prueba están en los README de cada carpeta.
+
+
+
 ## Arquitectura
 El frontend y el backend son **dos aplicaciones independientes que no se comunican entre si**.
 
